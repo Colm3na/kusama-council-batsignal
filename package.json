@@ -1,0 +1,24 @@
+{
+  "private": true,
+  "name": "kusama-council-batsignal",
+  "description": "Kusama council batsignal",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Colm3na/kusama-council-batsignal.git"
+  },
+  "keywords": [
+    "blockchain",
+    "kusama",
+    "polkadot",
+    "substrate"
+  ],
+  "author": "Bitcoinera",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Colm3na/kusama-council-batsignal/issues"
+  },
+  "homepage": "https://github.com/Colm3na/kusama-council-batsignal#readme",
+  "workspaces": ["app", "backend"],
+  "scripts": {}
+ }
+ 
