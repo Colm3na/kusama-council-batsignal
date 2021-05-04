@@ -31,4 +31,4 @@ That will build and start all the required dockers automagically:
 
 Once the node is synced the crawler will start to listen to new blocks, extrinsics and module events and will harvest them from current block height to genesis.
 
-You can access Hasura console at http://server_ip_address:8082, track the new tables and you will be able to query the harvested data using GraphQL.
+You can access Hasura console at `http://server_ip_address:8082`, track the new tables and you will be able to query the harvested data using GraphQL.
