@@ -14,7 +14,7 @@ services:
       - '30333:30333'
       - '9933:9933'
       - '9944:9944'
-    command: -d /data --unsafe-ws-external --unsafe-rpc-external --rpc-cors all --pruning=archive --name 'Kusama Council Batsignal' --chain kusama
+    command: -d /data --allow-private-ipv4 --unsafe-ws-external --unsafe-rpc-external --rpc-cors all --pruning=archive --name 'Kusama Council Batsignal' --chain kusama
     restart: always
   #
   # SQL data base
