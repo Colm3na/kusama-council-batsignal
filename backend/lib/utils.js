@@ -25,6 +25,7 @@ module.exports = {
   },
   storeExtrinsics: async (pool, blockNumber, extrinsics, blockEvents, timestamp, loggerOptions) => {
     const startTime = new Date().getTime();
+    let systemRemarkCounter = 0;
     extrinsics.forEach(async (extrinsic, index) => {
       const { isSigned } = extrinsic;
       const signer = isSigned ? extrinsic.signer.toString() : '';
@@ -68,11 +69,50 @@ module.exports = {
       } catch (error) {
         logger.error(loggerOptions, `Error adding extrinsic ${blockNumber}-${index}: ${JSON.stringify(error)}`);
       }
+
+      // store system remarks
+      if (section === 'system' && method === 'remark') {
+        const systemRemarkSql = `INSERT INTO system_remark (
+          block_number,
+          extrinsic_index,
+          is_signed,
+          signer,
+          section,
+          method,
+          args,
+          hash,
+          doc,
+          success,
+          timestamp
+        ) VALUES (
+          '${blockNumber}',
+          '${index}',
+          '${isSigned}',
+          '${signer}',
+          '${section}',
+          '${method}',
+          '${args}',
+          '${hash}',
+          '${doc}',
+          '${success}',
+          '${timestamp}'
+        )
+        ON CONFLICT ON CONSTRAINT system_remark_pkey 
+        DO NOTHING;
+        ;`;
+        try {
+          await pool.query(systemRemarkSql);
+          logger.info(loggerOptions, `Added system_remark ${blockNumber}-${index} (${module.exports.shortHash(hash)})`);
+        } catch (error) {
+          logger.error(loggerOptions, `Error adding system_remark ${blockNumber}-${index}: ${JSON.stringify(error)}`);
+        }
+        systemRemarkCounter += 1;
+      }
     });
 
     // Log execution time
     const endTime = new Date().getTime();
-    logger.info(loggerOptions, `Added ${extrinsics.length} extrinsics in ${((endTime - startTime) / 1000).toFixed(3)}s`);
+    logger.info(loggerOptions, `Added ${extrinsics.length} extrinsics and ${systemRemarkCounter} system remarks in ${((endTime - startTime) / 1000).toFixed(3)}s`);
   },
   getExtrinsicSuccess: (index, blockEvents) => {
     // assume success if no events were extracted
