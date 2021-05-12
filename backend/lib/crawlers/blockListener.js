@@ -166,9 +166,6 @@ module.exports = {
         } catch (error) {
           logger.error(loggerOptions, `Error updating finalized block: ${error}, sql: ${sql}`);
         }
-
-        // update totals
-        updateTotals(pool, loggerOptions);
       }
     });
   },
