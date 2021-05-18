@@ -1,10 +1,8 @@
 <template>
   <ion-page>
-    <!-- <ion-header :translucent="true">
-      <ion-toolbar>
-        <ion-title>Blank</ion-title>
-      </ion-toolbar>
-    </ion-header> -->
+    <ion-header :translucent="true">
+      <ion-img id="logo" src="assets/kusama.svg"></ion-img>
+    </ion-header>
     
     <ion-content :fullscreen="true">
       <ion-header collapse="condense">
@@ -66,5 +64,10 @@ export default defineComponent({
 
 #container a {
   text-decoration: none;
+}
+
+#logo {
+  width: 20rem;
+  margin: 1rem;
 }
 </style>
