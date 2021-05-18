@@ -15,7 +15,7 @@
     
       <div id="container">
         <div class="column" style="margin: 5rem;">
-          <label for="council-address">Enter your Council Address</label>
+          <label for="council-address">Enter your Council Address...</label>
           <input id="council-address" />
         </div>
       </div>
@@ -66,10 +66,5 @@ export default defineComponent({
 
 #container a {
   text-decoration: none;
-}
-
-.column {
-  display: flex;
-  flex-direction: column;
 }
 </style>

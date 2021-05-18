@@ -1,0 +1,27 @@
+ion-header {
+    --background: #000;   
+}
+
+ion-content {
+    --ion-font-family: "Space Mono",monospace;
+    --ion-font-size: 5rem;
+    --ion-font-weight: 600;
+    --background: #000;
+    --color: #e6007a;
+}
+
+label {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+input {
+    height: 2rem;
+    border-radius: 5px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
