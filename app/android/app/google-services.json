@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "742728127815",
+    "project_id": "kusama-council-batsignal",
+    "storage_bucket": "kusama-council-batsignal.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:742728127815:android:747c9e7311de0837882862",
+        "android_client_info": {
+          "package_name": "io.kusamacouncil.batsignal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "742728127815-jn1a9uvpofh0ihml6e0cfdoblhdfmi5b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC99ASjVm19GMSg_BnAFda_X9pJetSKyi4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "742728127815-jn1a9uvpofh0ihml6e0cfdoblhdfmi5b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

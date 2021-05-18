@@ -1,15 +1,12 @@
 {
   "appId": "io.kusamacouncil.batsignal",
-  "appName": "Kusama Council Batsignal",
+  "appName": "kusama-council-batsignal",
   "bundledWebRuntime": false,
   "npmClient": "yarn",
-  "webDir": "dist",
+  "webDir": "www",
   "plugins": {
     "SplashScreen": {
       "launchShowDuration": 0
-    },
-    "PushNotifications": {
-      "presentationOptions": ["badge", "sound", "alert"]
     }
   },
   "cordova": {}

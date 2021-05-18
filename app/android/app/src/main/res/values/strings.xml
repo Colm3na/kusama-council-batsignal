@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Kusama Council Batsignal</string>
+    <string name="title_activity_main">Kusama Council Batsignal</string>
+    <string name="package_name">io.kusamacouncil.batsignal</string>
+    <string name="custom_url_scheme">io.kusamacouncil.batsignal</string>
+</resources>
