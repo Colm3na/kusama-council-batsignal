@@ -12,10 +12,12 @@
       </ion-header>
     
       <div id="container">
-        <div class="column" style="margin: 5rem;">
-          <label for="council-address">Enter your Council Address...</label>
-          <input id="council-address" />
-        </div>
+        <form class="ion-padding" @submit.prevent="submitForm">
+          <div class="column" style="margin: 5rem;">
+            <label for="council-address">Enter your Council Address...</label>
+            <input id="council-address" />
+          </div>
+        </form>
       </div>
     </ion-content>
   </ion-page>
@@ -33,6 +35,16 @@ export default defineComponent({
     IonPage,
     IonTitle,
     IonToolbar
+  },
+  data() {
+    return {
+      address: ""
+    };
+  },
+  methods: {
+    submitForm() {
+      this.$store.dispatch('addAddress', this.address);
+    },
   }
 });
 </script>
@@ -69,5 +81,15 @@ export default defineComponent({
 #logo {
   width: 20rem;
   margin: 1rem;
+}
+
+@media screen and (max-width: 667px)  {
+  #logo {
+    width: 30rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;  
+  }
 }
 </style>

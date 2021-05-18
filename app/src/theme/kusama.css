@@ -1,8 +1,5 @@
-ion-header {
-    --background: #000;   
-}
-
 ion-content {
+    --offset-top: 17rem !important;
     --ion-font-family: "Space Mono",monospace;
     --ion-font-size: 5rem;
     --ion-font-weight: 600;
@@ -19,9 +16,14 @@ label {
 input {
     height: 2rem;
     border-radius: 5px;
+    color: #000;
 }
 
 .column {
     display: flex;
     flex-direction: column;
+}
+
+.ion-page {
+    background: #000;   
 }
