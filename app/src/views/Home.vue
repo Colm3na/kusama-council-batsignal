@@ -1,10 +1,10 @@
 <template>
   <ion-page>
-    <ion-header :translucent="true">
+    <!-- <ion-header :translucent="true">
       <ion-toolbar>
         <ion-title>Blank</ion-title>
       </ion-toolbar>
-    </ion-header>
+    </ion-header> -->
     
     <ion-content :fullscreen="true">
       <ion-header collapse="condense">
@@ -14,14 +14,16 @@
       </ion-header>
     
       <div id="container">
-        <strong>Ready to create an app?</strong>
-        <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+        <div class="column" style="margin: 5rem;">
+          <label for="council-address">Enter your Council Address</label>
+          <input id="council-address" />
+        </div>
       </div>
     </ion-content>
   </ion-page>
 </template>
 
-<script lang="ts">
+<script>
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
 import { defineComponent } from 'vue';
 
@@ -64,5 +66,10 @@ export default defineComponent({
 
 #container a {
   text-decoration: none;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
 }
 </style>
