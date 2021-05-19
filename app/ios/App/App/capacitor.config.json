@@ -1,1 +1,17 @@
-{}
+{
+  "appId": "io.kusamacouncil.batsignal",
+  "appName": "Kusama Council Batsignal",
+  "bundledWebRuntime": false,
+  "npmClient": "yarn",
+  "webDir": "dist",
+  "linuxAndroidStudioPath": "/home/ana/Downloads/android-studio/bin/studio.sh",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    },
+    "PushNotifications": {
+      "presentationOptions": ["badge", "sound", "alert"]
+    }
+  },
+  "cordova": {}
+}

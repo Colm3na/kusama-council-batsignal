@@ -25,6 +25,9 @@ import '@ionic/vue/css/display.css';
 import './theme/variables.css';
 import './theme/kusama.css';
 
+/* Push Notifications */
+import { registerForPushNotifications } from "./scripts/pushNotifications"
+
 const app = createApp(App)
   .use(IonicVue)
   .use(router)
@@ -32,4 +35,5 @@ const app = createApp(App)
   
 router.isReady().then(() => {
   app.mount('#app');
+  registerForPushNotifications(store, router);
 });
