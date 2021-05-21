@@ -1,0 +1,7 @@
+{
+  "name": "Kusama Council Batsignal",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}

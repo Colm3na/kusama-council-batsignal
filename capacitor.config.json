@@ -1,0 +1,13 @@
+{
+  "appId": "io.kusamacouncil.batsignal",
+  "appName": "kusama-council-batsignal",
+  "bundledWebRuntime": false,
+  "npmClient": "yarn",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}
