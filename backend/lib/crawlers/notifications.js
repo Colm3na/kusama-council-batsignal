@@ -19,7 +19,7 @@ module.exports = {
       args,
       hash,
       doc,
-      success,
+      success
     FROM system_remark WHERE processed IS FALSE;`;
     const res = await pool.query(sql);
     if (res.rows.length > 0) {
