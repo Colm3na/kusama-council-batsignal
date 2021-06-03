@@ -35,7 +35,7 @@ module.exports = {
         startDelay: 60 * 1000,
         pollingTime:
           parseInt(process.env.CRAWLER_NOTIFICATIONS_POLLING_TIME_MS, 10)
-          || 30 * 60 * 1000,
+          || 30 * 1000,
       },
     },
   ],
