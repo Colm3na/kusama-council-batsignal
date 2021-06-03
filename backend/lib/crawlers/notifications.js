@@ -24,7 +24,7 @@ module.exports = {
     const res = await pool.query(sql);
     if (res.rows.length > 0) {
       // eslint-disable-next-line no-restricted-syntax
-      for (const row of res.row) {
+      for (const row of res.rows) {
         const remark = {
           blockNumber: row.block_number,
           extrinsicIndex: row.extrinsic_index,
