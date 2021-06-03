@@ -58,6 +58,8 @@ CREATE TABLE IF NOT EXISTS system_remark (
   hash TEXT NOT NULL,
   doc TEXT NOT NULL,
   success BOOLEAN NOT NULL,
+  processed BOOLEAN DEFAULT false,
+  notification_sent_timestamp BIGINT DEFAULT NULL,
   timestamp BIGINT NOT NULL,
   PRIMARY KEY ( block_number, extrinsic_index ) 
 );
