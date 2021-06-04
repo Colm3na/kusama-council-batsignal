@@ -1,3 +1,5 @@
+const firebaseAdmin = require('./firebase');
+const Sentry = require('@sentry/node');
 const pino = require('pino');
 
 const logger = pino();
@@ -53,7 +55,17 @@ module.exports = {
     // TODO: Check council system remark constraints
 
     // TODO: Send notification if contrainsts match
+    try {
+      console.log(`Sending notification for system remark with block number ${remark.blockNumber}`);
+      await firebaseAdmin.messaging().send(JSON.stringify(remark));
+    } catch (error) {
+      console.error('Error sending message:', error, message);
+      Sentry.captureException(error);
+    }
 
-    // TODO: Update processed = true and sent_notification_timestamp in system_remarks table
+    console.log('Update processed and notification_sent_timestamp on the system remarks table');
+    const sql = `UPDATE system_remark SET processed = '${true}', notification_sent_timestamp = '${Date.now().toLocaleString()}' WHERE block_number = '${remark.blockNumber}'`;
+    await pool.query(sql);
+
   },
 };
