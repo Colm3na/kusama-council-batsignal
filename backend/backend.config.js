@@ -30,7 +30,7 @@ module.exports = {
     {
       enabled: !process.env.CRAWLER_NOTIFICATIONS_DISABLE,
       // eslint-disable-next-line global-require
-      module: require('./lib/crawlers/notifications'),
+      module: require('./lib/notifications/notifications'),
       config: {
         startDelay: 60 * 1000,
         pollingTime:
